@@ -26,8 +26,7 @@ export default function RootLayout({ children }) {
       >
        <Navbar></Navbar>
         <div className="min-h-screen">{children}</div>
-        <div><li><Link href='/blog'></Link></li>
-        </div>
+       
         <footer>footer</footer>
       </body>
     </html>

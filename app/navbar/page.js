@@ -1,14 +1,14 @@
-"use client";
+import Link from "next/link";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
-import Link from 'next/link';
-import { useKindeAuth } from '@kinde-oss/kinde-auth-nextjs';
-
-export default function Navbar() {
-  const { isAuthenticated, login, logout } = useKindeAuth();
+export default async function Navbar() {
+  const { getUser } = await getKindeServerSession();
+  const user = await getUser();
 
   return (
-    <nav className="bg-blue-600 text-white p-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-blue-600 w-full text-white shadow-md pt-2 pb-2">
+      <div className="p-2  md:container mx-auto flex justify-between items-center  ">
         <div className="text-2xl font-bold">
           <Link href="/">My Blog</Link>
         </div>
@@ -25,20 +25,21 @@ export default function Navbar() {
           </li>
         </ul>
         <div>
-          {isAuthenticated ? (
-            <button
-              onClick={logout}
-              className="bg-red-500 px-4 py-2 rounded hover:bg-red-700"
-            >
-              Logout
-            </button>
+          {user ? (
+            <div className="flex items-center space-x-4">
+              {/* <span className="text-white">Welcome, {user.given_name || user.email}</span> */}
+              <LogoutLink>
+                <button className="bg-red-500 px-4 py-2 rounded hover:bg-red-700">
+                  Logout
+                </button>
+              </LogoutLink>
+            </div>
           ) : (
-            <button
-              onClick={login}
-              className="bg-green-500 px-4 py-2 rounded hover:bg-green-700"
-            >
-              Login
-            </button>
+            <LoginLink>
+              <button className="bg-green-500 px-4 py-2 rounded hover:bg-green-700">
+                Login
+              </button>
+            </LoginLink>
           )}
         </div>
       </div>
