@@ -17,7 +17,7 @@ export default async function blog() {
               <span>{post.title}</span>
               <Link href={`/blog/${post.id}`} className="text-blue-500 text-lg font-semibold">
                 <button 
-                  className="bg-green-300 text-gray-600 mt-2 px-4 py-2 rounded"
+                  className="btn bg-green-300 text-gray-600 mt-2 px-4 py-2 rounded"
                   aria-label={`Read more about ${post.title}`}
                 >
                   Click to read more...

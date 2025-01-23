@@ -12,7 +12,7 @@ export default async function BlogPage({ params }) {
       >
         ← Back to Home
       </Link>
-      <p className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-gray-900">{post.id}</p>
+      <p className="text-2xl font-bold leading-tight ">Id: {post.id}</p>
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-gray-900">
         {post.title}
       </h1>
