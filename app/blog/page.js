@@ -15,9 +15,14 @@ export default async function blog() {
             className="p-4 border rounded shadow flex flex-col justify-between h-full min-h-[120px]"
           >
               <span>{post.title}</span>
-            <Link href={`/blog/${post.id}`} className="text-blue-500 text-lg font-semibold">
-            <button className="bg-green-300 text-gray-600 mt-2">Click to read more...</button>
-            </Link>
+              <Link href={`/blog/${post.id}`} className="text-blue-500 text-lg font-semibold">
+                <button 
+                  className="bg-green-300 text-gray-600 mt-2 px-4 py-2 rounded"
+                  aria-label={`Read more about ${post.title}`}
+                >
+                  Click to read more...
+                </button>
+              </Link>
           </li>
         ))}
       </ul>
