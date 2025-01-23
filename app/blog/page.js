@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 // Fetch data directly in the server component
-export default async function Home() {
+export default async function blog() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   const posts = await res.json();
 
