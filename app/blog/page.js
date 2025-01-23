@@ -14,10 +14,10 @@ export default async function blog() {
             key={post.id} 
             className="p-4 border rounded shadow flex flex-col justify-between h-full min-h-[120px]"
           >
-            <Link href={`/blog/${post.id}`} className="text-blue-500 text-lg font-semibold">
               <span>{post.title}</span>
+            <Link href={`/blog/${post.id}`} className="text-blue-500 text-lg font-semibold">
+            <button className="bg-green-300 text-gray-600 mt-2">Click to read more...</button>
             </Link>
-            <p className="text-gray-600 mt-2">Click to read more...</p>
           </li>
         ))}
       </ul>
