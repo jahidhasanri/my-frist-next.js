@@ -9,10 +9,10 @@ export default async function Navbar() {
   return (
     <nav className="bg-blue-600 w-full text-white shadow-md pt-2 pb-2">
       <div className="p-2  md:container mx-auto flex justify-between items-center  ">
-        <div className="text-2xl font-bold">
+        <div className="text-xl md:text-2xl md:font-bold">
           <Link href="/">My Blog</Link>
         </div>
-        <ul className="flex space-x-6">
+        <ul className="mb-2 md:mb-0 md:flex md:space-x-6">
           <li>
             <Link href="/" className="hover:text-gray-300">
               Home
