@@ -14,10 +14,17 @@ export default async function Home() {
             key={post.id} 
             className="p-4 border rounded shadow flex flex-col justify-between h-full min-h-[120px]"
           >
-            <Link href={`/blog/${post.id}`} className="text-blue-500 text-lg font-semibold">
-              <span>{post.title}</span>
-            </Link>
-            <p className="text-gray-600 mt-2">Click to read more...</p>
+            <span className='text-xl font-bold mb-2'>{post.title}</span>
+              <Link href={`/blog/${post.id}`} className="text-blue-500 text-lg font-semibold">
+                
+                <button 
+                  className="btn bg-green-200 text-gray-600 mt-2 px-4 py-2 rounded"
+                  
+                >
+                  Click to read more...
+                </button>
+                
+              </Link>
           </li>
         ))}
       </ul>
