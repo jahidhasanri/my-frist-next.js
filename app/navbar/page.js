@@ -26,7 +26,7 @@ export default async function Navbar() {
         </ul>
         <div>
           {user ? (
-            <div className="flex items-center space-x-4">
+            <div className="md:flex items-center space-x-4">
               <span className="text-white">{user.given_name || user.email}</span>
               <LogoutLink>
                 <button className="bg-red-500 px-4 py-2 rounded hover:bg-red-700">
